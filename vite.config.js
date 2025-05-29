@@ -11,17 +11,18 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "/src/scss/abstracts/variables" as *;
-                         @use "/src/scss/abstracts/mixins" as *;`,
-      },
-    },
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/scss/abstracts/variables" as *;
+                         @use "@/scss/abstracts/mixins" as *;`,
+      },
+    },
+  },
+  
 })
